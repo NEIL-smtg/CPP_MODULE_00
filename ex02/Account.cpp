@@ -6,7 +6,7 @@
 /*   By: suchua <suchua@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 00:09:36 by suchua            #+#    #+#             */
-/*   Updated: 2023/04/04 02:22:29 by suchua           ###   ########.fr       */
+/*   Updated: 2023/04/04 02:37:07 by suchua           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,15 +94,13 @@ void	Account::makeDeposit(int deposit)
 bool	Account::makeWithdrawal(int withdrawal)
 {
 	_displayTimestamp();
+	print_format("index:", _accountIndex, 1);
+	print_format("p_amount:", _amount, 1);
 	if (_amount < withdrawal)
 	{
-		print_format("index:", _accountIndex, 1);
-		print_format("p_amount:", _amount, 1);
 		std::cout << "withdrawal:refused" << std::endl;
 		return (false);
 	}
-	print_format("index:", _accountIndex, 1);
-	print_format("p_amount:", _amount, 1);
 	print_format("withdrawal:", withdrawal, 1);
 	_amount -= withdrawal;
 	_totalAmount -= withdrawal;
