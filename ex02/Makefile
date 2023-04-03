@@ -12,10 +12,10 @@ all:
 	make $(NAME)
 
 $(NAME):$(OBJS)
-	$(GCPP) -o $(NAME) $(OBJS)
+	$(GCPP) $(CFLAGS) -o $(NAME) $(OBJS)
 
 $(OBJS_DIR)%.o:./%.cpp
-	$(GCPP) -c $< -o $@
+	$(GCPP) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS_DIR)

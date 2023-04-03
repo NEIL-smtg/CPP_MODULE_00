@@ -6,7 +6,7 @@
 /*   By: suchua <suchua@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 00:09:36 by suchua            #+#    #+#             */
-/*   Updated: 2023/04/04 02:37:07 by suchua           ###   ########.fr       */
+/*   Updated: 2023/04/04 03:38:39 by suchua           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int Account::_totalNbWithdrawals = 0;
 
 Account::Account(void)
 {
-	_amount = 0;
 	_nbDeposits = 0;
 	_nbWithdrawals = 0;
 	_nbDeposits = 0;
@@ -38,7 +37,7 @@ void	print_format(std::string s, int nb, int semicolon)
 
 Account::Account(int initial_deposit)
 {
-	_amount += initial_deposit;
+	_amount = initial_deposit;
 	_totalAmount += initial_deposit;
 	++_nbAccounts;
 	_accountIndex = _nbAccounts - 1;
