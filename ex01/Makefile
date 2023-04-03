@@ -1,27 +1,27 @@
-NAME		=		phonebook
-FILES		=		main PhoneBook Contact
-OBJS_DIR	=		objs/
-SRCS_DIR	=		./
-SRCS		=		$(addprefix $(SRCS_DIR), $(addsuffix .cpp, $(FILES)))
-OBJS		=		$(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
-GPP			=		c++
-FLAGS		=		-Wall -Werror -Wextra -std=c++98 -pedantic
-RM			=		rm -rf
+NAME		=	phonebook
+FILES		=	Main PhoneBook Contact
+OBJS_DIR	=	objs/
+SRCS_DIR	=	./
+SRCS		=	$(addsuffix .cpp, $(FILES))
+OBJS		=	$(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
+CPP			=	c++
+CFLAGS		=	-Wall -Werror -Wextra -std=c++98 -pedantic
+RM			=	-rm -rf
 
-all: 
-	@mkdir -p $(OBJS_DIR)
-	@make $(NAME)
+all:
+	mkdir -p $(OBJS_DIR)
+	make $(NAME)
 
-$(OBJS_DIR)%.o: $(SRCS_DIR)%.cpp
-	@$(GPP) $(FLAGS) -c $< -o $@
+$(NAME): $(OBJS)
+	$(CPP) $(CFLAGS) -o $(NAME) $(OBJS)
 
-$(NAME) : $(OBJS)
-	$(GPP) $(FLAGS) $(OBJS) -o $(NAME)
+$(OBJS_DIR)%.o:$(SRCS_DIR)%.cpp
+	$(CPP) $(CFLAGS) -c $< -o $@
 
-clean :
+clean:
 	$(RM) $(OBJS_DIR)
 
-fclean : clean
+fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all

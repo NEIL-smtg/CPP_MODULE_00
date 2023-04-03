@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suchua < suchua@student.42kl.edu.my>       +#+  +:+       +#+        */
+/*   By: suchua <suchua@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 19:49:34 by suchua            #+#    #+#             */
-/*   Updated: 2023/03/11 20:08:20 by suchua           ###   ########.fr       */
+/*   Updated: 2023/04/03 20:59:11 by suchua           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int ac, char **av)
 	}
 	for (int i = 1; i < ac; i++)
 	{
-		for (int j = 0; av[i][j] != 0; j++)
+		for (int j = 0; av[i][j]; j++)
 			if (av[i][j] >= 'a' && av[i][j] <= 'z')
 				av[i][j] -= 32;
 		std::cout << av[i];

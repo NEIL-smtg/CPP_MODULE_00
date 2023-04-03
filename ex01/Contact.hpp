@@ -3,37 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: suchua < suchua@student.42kl.edu.my>       +#+  +:+       +#+        */
+/*   By: suchua <suchua@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/11 20:33:36 by suchua            #+#    #+#             */
-/*   Updated: 2023/03/11 21:39:34 by suchua           ###   ########.fr       */
+/*   Created: 2023/04/03 21:51:22 by suchua            #+#    #+#             */
+/*   Updated: 2023/04/03 22:17:32 by suchua           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
-#include <string>
-#include <iostream>
+# include <string>
 
-class Contact
-{
+class Contact{
+
 	private:
-		std::string first_name;
-		std::string last_name;
-		std::string nickname;
-		std::string phone_num;
-		std::string secret;
+		std::string	firstname;
+		std::string	lastname;
+		std::string	nickname;
+		std::string	phone_num;
+		std::string	darkest_secret;
 	public:
 		Contact(void);
+		Contact(std::string	firstname, std::string lastname, std::string nickname, \
+				std::string phone_num, std::string darkest_secret);
 		~Contact(void);
-		void	set_contact(std::string first_name, std::string last_name, std::string nickname,
-										std::string phone_num, std::string secret);
-		void	search_contact(int index);
-		void	print_contact(void);
-		std::string	get_first_name();
-		std::string	get_last_name();
-		std::string	get_nick_name();
+		std::string		get_first_name(void);
+		std::string		get_last_name(void);
+		std::string		get_nickname(void);
 };
 
 #endif
