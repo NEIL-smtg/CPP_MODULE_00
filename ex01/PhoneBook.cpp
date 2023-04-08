@@ -6,7 +6,7 @@
 /*   By: suchua <suchua@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 21:15:09 by suchua            #+#    #+#             */
-/*   Updated: 2023/04/03 23:01:15 by suchua           ###   ########.fr       */
+/*   Updated: 2023/04/08 17:47:17 by suchua           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ PhoneBook::~PhoneBook(void)
 
 void	PhoneBook::add_contact()
 {
-	std::string fname, lname, nkname, phonenum, secret;
+	std::string fname, lname, nkname, phoneNum, secret;
 
 	std::cout << "Enter firstname : " << std::endl;
 	std::cin >> fname;
@@ -32,11 +32,11 @@ void	PhoneBook::add_contact()
 	std::cout << "Enter nickname : " << std::endl;
 	std::cin >> nkname;
 	std::cout << "Enter phone number : " << std::endl;
-	std::cin >> phonenum;
+	std::cin >> phoneNum;
 	std::cout << "Enter darkest secret : " << std::endl;
 	std::cin >> secret;
 	
-	Contact newContact = Contact(fname, lname, nkname, phonenum, secret);
+	Contact newContact = Contact(fname, lname, nkname, phoneNum, secret);
 	contact[phonebook_index] = newContact;
 	phonebook_index = (phonebook_index + 1) % MAX_CONTACT;
 }
@@ -57,9 +57,9 @@ void	print_all_contact(Contact contact[MAX_CONTACT])
 	{
 		std::cout << std::setw(10) << i + 1;
 		std::cout << '|';
-		print_info(contact[i].get_first_name());
-		print_info(contact[i].get_last_name());
-		print_info(contact[i].get_nickname());
+		print_info(contact[i].getFirstName());
+		print_info(contact[i].getLastName());
+		print_info(contact[i].getNickName());
 		std::cout << std::endl;
 	}	
 }
@@ -70,9 +70,9 @@ void	print_single_contact(Contact contact, int i)
 
 	std::cout << std::setw(10) << i;
 	std::cout << '|';
-	print_info(contact.get_first_name());
-	print_info(contact.get_last_name());
-	print_info(contact.get_nickname());
+	print_info(contact.getFirstName());
+	print_info(contact.getLastName());
+	print_info(contact.getNickName());
 	std::cout << std::endl;
 }
 
