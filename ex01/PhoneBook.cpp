@@ -6,7 +6,7 @@
 /*   By: suchua <suchua@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 21:15:09 by suchua            #+#    #+#             */
-/*   Updated: 2023/04/08 17:47:17 by suchua           ###   ########.fr       */
+/*   Updated: 2023/04/11 15:04:50 by suchua           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,19 @@ void	PhoneBook::add_contact()
 
 	std::cout << "Enter firstname : " << std::endl;
 	std::cin >> fname;
+	std::cin.ignore();
 	std::cout << "Enter lastname : " << std::endl;
 	std::cin >> lname;
+	std::cin.ignore();
 	std::cout << "Enter nickname : " << std::endl;
 	std::cin >> nkname;
+	std::cin.ignore();
 	std::cout << "Enter phone number : " << std::endl;
 	std::cin >> phoneNum;
+	std::cin.ignore();
 	std::cout << "Enter darkest secret : " << std::endl;
 	std::cin >> secret;
+	std::cin.ignore();
 	
 	Contact newContact = Contact(fname, lname, nkname, phoneNum, secret);
 	contact[phonebook_index] = newContact;
@@ -83,6 +88,7 @@ void	PhoneBook::search_contact(void)
 	print_all_contact(contact);
 	std::cout << "Enter index :" << std::endl;
 	std::cin >> input;
+	std::cin.ignore();
 	if (input.length() > 1 || input.front() < '1' || input.front() > '9')
 	{
 		std::cout << "Index is out of range" << std::endl;

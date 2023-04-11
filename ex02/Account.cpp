@@ -6,7 +6,7 @@
 /*   By: suchua <suchua@student.42kl.edu.my>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 00:09:36 by suchua            #+#    #+#             */
-/*   Updated: 2023/04/04 03:38:39 by suchua           ###   ########.fr       */
+/*   Updated: 2023/04/11 15:12:46 by suchua           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,7 @@ int	Account::checkAmount(void) const
 
 void	Account::_displayTimestamp(void)
 {
-	char	buffer[80];
+	char		buffer[80];
 	std::time_t	t;
 
 	t = std::time(NULL);
